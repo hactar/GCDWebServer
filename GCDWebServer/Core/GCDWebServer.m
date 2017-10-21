@@ -1071,6 +1071,7 @@ static inline NSString* _EncodeBase64(NSString* string) {
           } else {
             response = [GCDWebServerResponse responseWithStatusCode:kGCDWebServerHTTPStatusCode_NotFound];
           }
+          [response setValue:@"*" forAdditionalHeader:@"Access-Control-Allow-Origin"];
           return response;
 
         }];
